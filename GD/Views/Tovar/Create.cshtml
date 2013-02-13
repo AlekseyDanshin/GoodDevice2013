@@ -1,0 +1,59 @@
+﻿@model GD.Models.Товар
+
+@{
+    ViewBag.Title = string.Format("Создание товара | {0}", GD.Constants.TITLE);
+}
+
+<p>@Html.ActionLink("Отмена", "Index")</p>
+<h2>Создание производителя</h2>
+
+
+    @Html.LabelFor(model => model.Название)
+    <br />
+    @Html.EditorFor(model => model.Название)
+    <br /><br />
+    @Html.Label("Вес товара")
+    <br />
+    @Html.EditorFor(model => model.Вес_товара)
+    <br /><br />
+    @Html.LabelFor(model => model.Ширина)
+    <br />
+    @Html.EditorFor(model => model.Ширина)
+    <br /><br />
+     @Html.LabelFor(model => model.Высота)
+    <br />
+    @Html.EditorFor(model => model.Высота)
+    <br /><br />
+    @Html.Label("Цена товара")
+    <br />
+    @Html.EditorFor(model => model.Цена_товара)
+    <br /><br />
+    @Html.Label("Гарантия, мес")
+    <br />
+    @Html.EditorFor(model => model.Гарантия_мес)
+    <br /><br />
+    @Html.LabelFor(model => model.Изображение)
+    <br />
+    @using (Html.BeginForm("", "Загрузка файла", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+    <input type="file" name="fileUpload" /><br />      
+    <input type="submit" name="Submit" id="SubmitSingle" value="Загрузить" />}
+    <br /><br />
+    @Html.Label("Уникальные характеристики")
+    <br />
+    @Html.EditorFor(model => model.Уникальные_характеристики)
+    <br /><br />
+    @Html.LabelFor(model => model.Длина)
+    <br />
+    @Html.EditorFor(model => model.Длина)
+    <br /><br />
+    @Html.LabelFor(model => model.Подкатегория)
+    <br />
+   @Html.EditorFor(model => model.Подкатегория)
+    <br /><br />
+    <p>
+       
+    
+
+</p>
+    <input type="submit" value="Создать" />

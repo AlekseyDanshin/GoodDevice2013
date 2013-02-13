@@ -1,0 +1,16 @@
+﻿@model GD.Models.Товар
+
+@{
+    ViewBag.Title = string.Format("Удаление товара | {0}", GD.Constants.TITLE);
+}
+
+<p>@Html.ActionLink("Отмена", "Details", new { id = Model.id_товара })</p>
+<h2 style="color:Red">Вы уверены, что хотите удалить этот товар?</h2>
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Удалить" />
+}
+
+<p style="font-weight:bold">@Model.Название</p>
+<p>@Model.Длина</p>

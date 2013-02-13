@@ -1,0 +1,63 @@
+﻿@model GD.Models.Товар
+
+@{
+    ViewBag.Title = string.Format("Редактирование товара | {0}", GD.Constants.TITLE);
+}
+
+<p>@Html.ActionLink("Отмена", "Details", new { id = Model.id_товара })</p>
+<h2>Редактирование товара</h2>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Название)
+    <br />
+    @Html.EditorFor(model => model.Название)
+    <br /><br />
+    @Html.Label("Вес товара")
+    <br />
+    @Html.EditorFor(model => model.Вес_товара)
+    <br /><br />
+    @Html.LabelFor(model => model.Ширина)
+    <br />
+    @Html.EditorFor(model => model.Ширина)
+    <br /><br />
+    @Html.LabelFor(model => model.Длина)
+    <br />
+    @Html.EditorFor(model => model.Длина)
+    <br /><br />
+     @Html.LabelFor(model => model.Высота)
+    <br />
+    @Html.EditorFor(model => model.Высота)
+    <br /><br />
+    @Html.Label("Цена товара")
+    <br />
+    @Html.EditorFor(model => model.Цена_товара)
+    <br /><br />
+    @Html.Label("Гарантия, месяцев")
+    <br />
+    @Html.EditorFor(model => model.Гарантия_мес)
+    <br /><br />
+    @Html.Label("Уникальные характеристики")
+    <br />
+    @Html.EditorFor(model => model.Уникальные_характеристики)
+    <br /><br />
+  
+     @Html.Label("Разрешение на возврат товара")
+    <br />
+   
+   @Html.RadioButtonFor(model => model.Разрешение_на_возврат_товара, "true", false)
+   @Html.Label("Есть")
+    <br />
+   @Html.RadioButtonFor(model => model.Разрешение_на_возврат_товара, "false", true)
+   @Html.Label("Нет")
+   <br /><br />
+    <input type="submit" value="Сохранить" />
+}
+@Html.LabelFor(model => model.Изображение)
+    <br />
+    @using (Html.BeginForm("", "Details", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+    <input type="file" name="fileUpload" /><br />      
+    <input type="submit" name="Submit" id="SubmitSingle" value="Загрузить" />}
+    
+    <br /> <br />

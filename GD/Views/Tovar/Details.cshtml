@@ -1,0 +1,30 @@
+﻿@model GD.Models.Товар
+
+@{
+    ViewBag.Title = string.Format("{0} | Товары | {1}", Model.Название, GD.Constants.TITLE);
+}
+@if (Request.IsAuthenticated && (User.IsInRole(GD.Constants.ROLE_ADMIN) || User.IsInRole(GD.Constants.ROLE_CONTENT_MANAGER)))
+{
+    <p>@Html.ActionLink("Редактировать", "Edit", new { id = Model.id_товара })&nbsp;&nbsp;&nbsp;@Html.ActionLink("Удалить", "Delete", new { id = Model.id_товара })</p>
+}
+
+<h2>@Model.Название</h2>
+<table style=" text-align:center;">
+<tr><td><p>Цена товара</p></td>
+<td><p>Ширина</p></td>
+<td><p>Длина</p></td>
+<td><p>Изображение</p></td>
+<td><p>Гарантия, мес</p></td>
+<td><p>Подкатегория</p></td>
+<td><p>Уникальные характеристики</p></td>
+</tr>
+
+<tr><td><p>@Model.Цена_товара</p></td>
+<td><p>@Model.Ширина</p></td>
+<td><p>@Model.Длина</p></td>
+<td><p>@Model.Изображение</p></td>
+<td><p>@Model.Гарантия_мес</p></td>
+<td><p>@Model.Подкатегория</p></td>
+<td><p>@Model.Уникальные_характеристики</p></td></tr>
+</table>
+

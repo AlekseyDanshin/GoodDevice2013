@@ -1,0 +1,18 @@
+﻿@model IEnumerable<GD.Models.Товар>
+
+@{
+    ViewBag.Title = string.Format("Товары | {0}", GD.Constants.TITLE);
+}
+
+<h2>Товары</h2>
+@if (Request.IsAuthenticated && (User.IsInRole(GD.Constants.ROLE_ADMIN) || User.IsInRole(GD.Constants.ROLE_CONTENT_MANAGER)))
+{
+    <p>@Html.ActionLink("Создать", "Create")</p>
+}
+
+<table><tr><td>Наименование</td><td>Цена</td><td>Изображение</td></tr>
+    @foreach (var item in Model)
+    {    <tr><td><p>@Html.ActionLink(item.Название, "Details", new { id = item.id_товара })</p></td><td><p> @item.Цена_товара</p></td><td>@item.Изображение</td></tr>    }
+
+</table>
+

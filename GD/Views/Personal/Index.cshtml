@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = string.Format("Личная страница | {0}", GD.Constants.TITLE);
+    }
+
+    <p>
+    @Html.ActionLink("На главную", "Index", "Home")
+    @GD.Constants.BREADCRUMBS_SEPARATOR
+    Личная страница
+    </p>
+
+    <h2>Личная страница</h2>
+
+    <p>@Html.ActionLink("Сменить пароль", "ChangePassword", "Account");</p>

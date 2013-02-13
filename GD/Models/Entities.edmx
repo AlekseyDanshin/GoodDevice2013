@@ -1,0 +1,1635 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="KompShopModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="KompShopModelStoreContainer">
+          <EntitySet Name="aspnet_Membership" EntityType="KompShopModel.Store.aspnet_Membership" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_Users" EntityType="KompShopModel.Store.aspnet_Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Доставка" EntityType="KompShopModel.Store.Доставка" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Заказ" EntityType="KompShopModel.Store.Заказ" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Заказ Товар" EntityType="KompShopModel.Store.Заказ Товар" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Категория" EntityType="KompShopModel.Store.Категория" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Кредитная карта" EntityType="KompShopModel.Store.Кредитная карта" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Оценка" EntityType="KompShopModel.Store.Оценка" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Покупатель" EntityType="KompShopModel.Store.Покупатель" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Сотрудник" EntityType="KompShopModel.Store.Сотрудник" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Телефон/Покупатель" EntityType="KompShopModel.Store.Телефон/Покупатель" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Товар" EntityType="KompShopModel.Store.Товар" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="View_Доставка" EntityType="KompShopModel.Store.View_Доставка" store:Type="Views" store:Schema="dbo" store:Name="View_Доставка">
+            <DefiningQuery>SELECT 
+      [View_Доставка].[№ заказа] AS [№ заказа], 
+      [View_Доставка].[Суммарный вес] AS [Суммарный вес], 
+      [View_Доставка].[Суммарный объем] AS [Суммарный объем], 
+      [View_Доставка].[Дата доставки] AS [Дата доставки], 
+      [View_Доставка].[Время доставки] AS [Время доставки], 
+      [View_Доставка].[Стоимость доставки] AS [Стоимость доставки], 
+      [View_Доставка].[Удаленность от офиса км] AS [Удаленность от офиса км], 
+      [View_Доставка].[Статус доставки] AS [Статус доставки], 
+      [View_Доставка].[Вид доставки] AS [Вид доставки], 
+      [View_Доставка].[Статус заказа] AS [Статус заказа], 
+      [View_Доставка].[Стоимость заказа] AS [Стоимость заказа], 
+      [View_Доставка].[Способ оплаты] AS [Способ оплаты], 
+      [View_Доставка].[Способ получения] AS [Способ получения], 
+      [View_Доставка].[ФИО] AS [ФИО], 
+      [View_Доставка].[Телефон] AS [Телефон], 
+      [View_Доставка].[Название] AS [Название], 
+      [View_Доставка].[Разрешение на возврат товара] AS [Разрешение на возврат товара], 
+      [View_Доставка].[Изображение] AS [Изображение], 
+      [View_Доставка].[Количество] AS [Количество]
+      FROM [dbo].[View_Доставка] AS [View_Доставка]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_Заказ2" EntityType="KompShopModel.Store.View_Заказ2" store:Type="Views" store:Schema="dbo" store:Name="View_Заказ2">
+            <DefiningQuery>SELECT 
+      [View_Заказ2].[Категория] AS [Категория], 
+      [View_Заказ2].[Подкатегория] AS [Подкатегория], 
+      [View_Заказ2].[Цена товара] AS [Цена товара], 
+      [View_Заказ2].[Вес товара] AS [Вес товара], 
+      [View_Заказ2].[Название] AS [Название], 
+      [View_Заказ2].[Дата заказа] AS [Дата заказа], 
+      [View_Заказ2].[Статус заказа] AS [Статус заказа], 
+      [View_Заказ2].[Стоимость заказа] AS [Стоимость заказа], 
+      [View_Заказ2].[Способ оплаты] AS [Способ оплаты], 
+      [View_Заказ2].[ФИО] AS [ФИО]
+      FROM [dbo].[View_Заказ2] AS [View_Заказ2]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_Корзина" EntityType="KompShopModel.Store.View_Корзина" store:Type="Views" store:Schema="dbo" store:Name="View_Корзина">
+            <DefiningQuery>SELECT 
+      [View_Корзина].[Категория] AS [Категория], 
+      [View_Корзина].[Подкатегория] AS [Подкатегория], 
+      [View_Корзина].[Название] AS [Название], 
+      [View_Корзина].[№ заказа] AS [№ заказа], 
+      [View_Корзина].[Количество] AS [Количество], 
+      [View_Корзина].[Цена товара] AS [Цена товара]
+      FROM [dbo].[View_Корзина] AS [View_Корзина]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_Оформленный_заказ" EntityType="KompShopModel.Store.View_Оформленный_заказ" store:Type="Views" store:Schema="dbo" store:Name="View_Оформленный_заказ">
+            <DefiningQuery>SELECT 
+      [View_Оформленный_заказ].[№ заказа] AS [№ заказа], 
+      [View_Оформленный_заказ].[Суммарный вес] AS [Суммарный вес], 
+      [View_Оформленный_заказ].[Суммарный объем] AS [Суммарный объем], 
+      [View_Оформленный_заказ].[Дата доставки] AS [Дата доставки], 
+      [View_Оформленный_заказ].[Время доставки] AS [Время доставки], 
+      [View_Оформленный_заказ].[Стоимость доставки] AS [Стоимость доставки], 
+      [View_Оформленный_заказ].[Удаленность от офиса км] AS [Удаленность от офиса км], 
+      [View_Оформленный_заказ].[Вид доставки] AS [Вид доставки], 
+      [View_Оформленный_заказ].[Дата заказа] AS [Дата заказа], 
+      [View_Оформленный_заказ].[Время заказа] AS [Время заказа], 
+      [View_Оформленный_заказ].[Стоимость заказа] AS [Стоимость заказа], 
+      [View_Оформленный_заказ].[Способ оплаты] AS [Способ оплаты], 
+      [View_Оформленный_заказ].[Способ получения] AS [Способ получения], 
+      [View_Оформленный_заказ].[ФИО] AS [ФИО]
+      FROM [dbo].[View_Оформленный_заказ] AS [View_Оформленный_заказ]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_Покупатель2" EntityType="KompShopModel.Store.View_Покупатель2" store:Type="Views" store:Schema="dbo" store:Name="View_Покупатель2">
+            <DefiningQuery>SELECT 
+      [View_Покупатель2].[Телефон] AS [Телефон], 
+      [View_Покупатель2].[ФИО] AS [ФИО], 
+      [View_Покупатель2].[Адрес] AS [Адрес], 
+      [View_Покупатель2].[Дата рождения] AS [Дата рождения], 
+      [View_Покупатель2].[Пол] AS [Пол], 
+      [View_Покупатель2].[UserName] AS [UserName], 
+      [View_Покупатель2].[Email] AS [Email]
+      FROM [dbo].[View_Покупатель2] AS [View_Покупатель2]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_Пользователь" EntityType="KompShopModel.Store.View_Пользователь" store:Type="Views" store:Schema="dbo" store:Name="View_Пользователь">
+            <DefiningQuery>SELECT 
+      [View_Пользователь].[UserName] AS [UserName], 
+      [View_Пользователь].[ФИО] AS [ФИО], 
+      [View_Пользователь].[Адрес] AS [Адрес], 
+      [View_Пользователь].[Телефон] AS [Телефон], 
+      [View_Пользователь].[Номер кредитной карты] AS [Номер кредитной карты], 
+      [View_Пользователь].[Email] AS [Email], 
+      [View_Пользователь].[Срок истечения] AS [Срок истечения], 
+      [View_Пользователь].[Дата регистрации] AS [Дата регистрации], 
+      [View_Пользователь].[Дата рождения] AS [Дата рождения], 
+      [View_Пользователь].[Пол] AS [Пол], 
+      [View_Пользователь].[Образование] AS [Образование]
+      FROM [dbo].[View_Пользователь] AS [View_Пользователь]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_Товар" EntityType="KompShopModel.Store.View_Товар" store:Type="Views" store:Schema="dbo" store:Name="View_Товар">
+            <DefiningQuery>SELECT 
+      [View_Товар].[Цена товара] AS [Цена товара], 
+      [View_Товар].[Название] AS [Название]
+      FROM [dbo].[View_Товар] AS [View_Товар]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_Товары" EntityType="KompShopModel.Store.View_Товары" store:Type="Views" store:Schema="dbo" store:Name="View_Товары">
+            <DefiningQuery>SELECT 
+      [View_Товары].[Цена товара] AS [Цена товара], 
+      [View_Товары].[Вес товара] AS [Вес товара], 
+      [View_Товары].[Длина] AS [Длина], 
+      [View_Товары].[Ширина] AS [Ширина], 
+      [View_Товары].[Высота] AS [Высота], 
+      [View_Товары].[Изображение] AS [Изображение], 
+      [View_Товары].[Уникальные характеристики] AS [Уникальные характеристики], 
+      [View_Товары].[Название] AS [Название], 
+      [View_Товары].[Гарантия мес] AS [Гарантия мес], 
+      [View_Товары].[Разрешение на возврат товара] AS [Разрешение на возврат товара], 
+      [View_Товары].[Категория] AS [Категория], 
+      [View_Товары].[Подкатегория] AS [Подкатегория]
+      FROM [dbo].[View_Товары] AS [View_Товары]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__aspnet_Me__UserI__6D0D32F4" Association="KompShopModel.Store.FK__aspnet_Me__UserI__6D0D32F4">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Доставка_Заказ" Association="KompShopModel.Store.FK_Доставка_Заказ">
+            <End Role="Заказ" EntitySet="Заказ" />
+            <End Role="Доставка" EntitySet="Доставка" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Доставка_Сотрудник" Association="KompShopModel.Store.FK_Доставка_Сотрудник">
+            <End Role="Сотрудник" EntitySet="Сотрудник" />
+            <End Role="Доставка" EntitySet="Доставка" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Заказ Товар_Заказ" Association="KompShopModel.Store.FK_Заказ Товар_Заказ">
+            <End Role="Заказ" EntitySet="Заказ" />
+            <End Role="Заказ Товар" EntitySet="Заказ Товар" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Заказ Товар_Товар" Association="KompShopModel.Store.FK_Заказ Товар_Товар">
+            <End Role="Товар" EntitySet="Товар" />
+            <End Role="Заказ Товар" EntitySet="Заказ Товар" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Заказ_Покупатель" Association="KompShopModel.Store.FK_Заказ_Покупатель">
+            <End Role="Покупатель" EntitySet="Покупатель" />
+            <End Role="Заказ" EntitySet="Заказ" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Кредитная карта_Покупатель" Association="KompShopModel.Store.FK_Кредитная карта_Покупатель">
+            <End Role="Покупатель" EntitySet="Покупатель" />
+            <End Role="Кредитная карта" EntitySet="Кредитная карта" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Оценка_Покупатель" Association="KompShopModel.Store.FK_Оценка_Покупатель">
+            <End Role="Покупатель" EntitySet="Покупатель" />
+            <End Role="Оценка" EntitySet="Оценка" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Оценка_Товар" Association="KompShopModel.Store.FK_Оценка_Товар">
+            <End Role="Товар" EntitySet="Товар" />
+            <End Role="Оценка" EntitySet="Оценка" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Покупатель_aspnet_Users1" Association="KompShopModel.Store.FK_Покупатель_aspnet_Users1">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="Покупатель" EntitySet="Покупатель" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Телефон/Покупатель_Покупатель" Association="KompShopModel.Store.FK_Телефон/Покупатель_Покупатель">
+            <End Role="Покупатель" EntitySet="Покупатель" />
+            <End Role="Телефон/Покупатель" EntitySet="Телефон/Покупатель" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Товар_Категория1" Association="KompShopModel.Store.FK_Товар_Категория1">
+            <End Role="Категория" EntitySet="Категория" />
+            <End Role="Товар" EntitySet="Товар" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="aspnet_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="PasswordFormat" Type="int" Nullable="false" />
+          <Property Name="PasswordSalt" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="MobilePIN" Type="nvarchar" MaxLength="16" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="LoweredEmail" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
+          <Property Name="IsApproved" Type="bit" Nullable="false" />
+          <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+          <Property Name="LastPasswordChangedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLockoutDate" Type="datetime" Nullable="false" />
+          <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
+          <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" Nullable="false" />
+          <Property Name="Comment" Type="ntext" />
+        </EntityType>
+        <EntityType Name="aspnet_Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="LoweredUserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
+          <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+          <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Доставка">
+          <Key>
+            <PropertyRef Name="№ заказа" />
+          </Key>
+          <Property Name="№ заказа" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Суммарный вес" Type="decimal" Nullable="false" />
+          <Property Name="Суммарный объем" Type="int" Nullable="false" />
+          <Property Name="Дата доставки" Type="smalldatetime" Nullable="false" />
+          <Property Name="Время доставки" Type="smalldatetime" />
+          <Property Name="Удаленность от офиса км" Type="bigint" Nullable="false" />
+          <Property Name="Стоимость доставки" Type="money" Nullable="false" />
+          <Property Name="Статус доставки" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Вид доставки" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Табельный номер" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Заказ">
+          <Key>
+            <PropertyRef Name="№ заказа" />
+          </Key>
+          <Property Name="№ заказа" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Дата заказа" Type="smalldatetime" Nullable="false" />
+          <Property Name="Время заказа" Type="smalldatetime" />
+          <Property Name="Статус заказа" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Стоимость заказа" Type="money" Nullable="false" />
+          <Property Name="Способ оплаты" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Способ получения" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="UserId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Заказ Товар">
+          <Key>
+            <PropertyRef Name="IdZakTov" />
+          </Key>
+          <Property Name="№ заказа" Type="bigint" Nullable="false" />
+          <Property Name="id товара" Type="bigint" Nullable="false" />
+          <Property Name="IdZakTov" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Количество" Type="int" />
+        </EntityType>
+        <EntityType Name="Категория">
+          <Key>
+            <PropertyRef Name="Подкатегория" />
+          </Key>
+          <Property Name="Категория" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Подкатегория" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Кредитная карта">
+          <Key>
+            <PropertyRef Name="Номер кредитной карты" />
+          </Key>
+          <Property Name="Номер кредитной карты" Type="numeric" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Проверочный код" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="Срок истечения" Type="smalldatetime" Nullable="false" />
+          <Property Name="Имя владельца" Type="varchar" Nullable="false" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Оценка">
+          <Key>
+            <PropertyRef Name="id_оценки" />
+          </Key>
+          <Property Name="Оценка" Type="tinyint" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_товара" Type="bigint" Nullable="false" />
+          <Property Name="id_оценки" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Покупатель">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="Адрес" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="ФИО" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="Дата рождения" Type="smalldatetime" Nullable="false" />
+          <Property Name="Дата регистрации" Type="smalldatetime" Nullable="false" />
+          <Property Name="Пол" Type="bit" Nullable="false" />
+          <Property Name="Образование" Type="varchar" MaxLength="150" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Сотрудник">
+          <Key>
+            <PropertyRef Name="Табельный номер" />
+          </Key>
+          <Property Name="Табельный номер" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ФИО" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="Факс" Type="bigint" />
+          <Property Name="Телефон" Type="bigint" Nullable="false" />
+          <Property Name="Должность" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="E-mail" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Телефон/Покупатель">
+          <Key>
+            <PropertyRef Name="Телефон" />
+          </Key>
+          <Property Name="Телефон" Type="numeric" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Товар">
+          <Key>
+            <PropertyRef Name="id товара" />
+          </Key>
+          <Property Name="id товара" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Цена товара" Type="smallmoney" Nullable="false" />
+          <Property Name="Вес товара" Type="decimal" Nullable="false" />
+          <Property Name="Длина" Type="bigint" />
+          <Property Name="Ширина" Type="bigint" />
+          <Property Name="Высота" Type="bigint" />
+          <Property Name="Изображение" Type="image" />
+          <Property Name="Уникальные характеристики" Type="varchar" />
+          <Property Name="Подкатегория" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Название" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="Гарантия мес" Type="int" />
+          <Property Name="Разрешение на возврат товара" Type="bit" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+      предупреждение 6002: В таблице или представлении "KompShop.dbo.View_Доставка" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.
+      -->
+        <EntityType Name="View_Доставка">
+          <Key>
+            <PropertyRef Name="№ заказа" />
+            <PropertyRef Name="Суммарный вес" />
+            <PropertyRef Name="Суммарный объем" />
+            <PropertyRef Name="Дата доставки" />
+            <PropertyRef Name="Стоимость доставки" />
+            <PropertyRef Name="Удаленность от офиса км" />
+            <PropertyRef Name="Статус доставки" />
+            <PropertyRef Name="Вид доставки" />
+            <PropertyRef Name="Статус заказа" />
+            <PropertyRef Name="Стоимость заказа" />
+            <PropertyRef Name="Способ оплаты" />
+            <PropertyRef Name="Способ получения" />
+            <PropertyRef Name="ФИО" />
+            <PropertyRef Name="Телефон" />
+            <PropertyRef Name="Название" />
+          </Key>
+          <Property Name="№ заказа" Type="bigint" Nullable="false" />
+          <Property Name="Суммарный вес" Type="decimal" Nullable="false" />
+          <Property Name="Суммарный объем" Type="int" Nullable="false" />
+          <Property Name="Дата доставки" Type="smalldatetime" Nullable="false" />
+          <Property Name="Время доставки" Type="smalldatetime" />
+          <Property Name="Стоимость доставки" Type="money" Nullable="false" />
+          <Property Name="Удаленность от офиса км" Type="bigint" Nullable="false" />
+          <Property Name="Статус доставки" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Вид доставки" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Статус заказа" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Стоимость заказа" Type="money" Nullable="false" />
+          <Property Name="Способ оплаты" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Способ получения" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ФИО" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="Телефон" Type="bigint" Nullable="false" />
+          <Property Name="Название" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="Разрешение на возврат товара" Type="bit" />
+          <Property Name="Изображение" Type="image" />
+          <Property Name="Количество" Type="int" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+      предупреждение 6002: В таблице или представлении "KompShop.dbo.View_Заказ2" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.
+      -->
+        <EntityType Name="View_Заказ2">
+          <Key>
+            <PropertyRef Name="Категория" />
+            <PropertyRef Name="Цена товара" />
+            <PropertyRef Name="Вес товара" />
+            <PropertyRef Name="Название" />
+            <PropertyRef Name="Дата заказа" />
+            <PropertyRef Name="Статус заказа" />
+            <PropertyRef Name="Стоимость заказа" />
+            <PropertyRef Name="Способ оплаты" />
+            <PropertyRef Name="ФИО" />
+          </Key>
+          <Property Name="Категория" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Подкатегория" Type="nvarchar" MaxLength="50" />
+          <Property Name="Цена товара" Type="smallmoney" Nullable="false" />
+          <Property Name="Вес товара" Type="decimal" Nullable="false" />
+          <Property Name="Название" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="Дата заказа" Type="smalldatetime" Nullable="false" />
+          <Property Name="Статус заказа" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Стоимость заказа" Type="money" Nullable="false" />
+          <Property Name="Способ оплаты" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ФИО" Type="varchar" Nullable="false" MaxLength="150" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+      предупреждение 6002: В таблице или представлении "KompShop.dbo.View_Корзина" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.
+      -->
+        <EntityType Name="View_Корзина">
+          <Key>
+            <PropertyRef Name="Категория" />
+            <PropertyRef Name="Название" />
+            <PropertyRef Name="№ заказа" />
+            <PropertyRef Name="Цена товара" />
+          </Key>
+          <Property Name="Категория" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Подкатегория" Type="nvarchar" MaxLength="50" />
+          <Property Name="Название" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="№ заказа" Type="bigint" Nullable="false" />
+          <Property Name="Количество" Type="int" />
+          <Property Name="Цена товара" Type="smallmoney" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+      предупреждение 6002: В таблице или представлении "KompShop.dbo.View_Оформленный_заказ" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.
+      -->
+        <EntityType Name="View_Оформленный_заказ">
+          <Key>
+            <PropertyRef Name="№ заказа" />
+            <PropertyRef Name="Суммарный вес" />
+            <PropertyRef Name="Суммарный объем" />
+            <PropertyRef Name="Дата доставки" />
+            <PropertyRef Name="Стоимость доставки" />
+            <PropertyRef Name="Удаленность от офиса км" />
+            <PropertyRef Name="Вид доставки" />
+            <PropertyRef Name="Дата заказа" />
+            <PropertyRef Name="Стоимость заказа" />
+            <PropertyRef Name="Способ оплаты" />
+            <PropertyRef Name="Способ получения" />
+            <PropertyRef Name="ФИО" />
+          </Key>
+          <Property Name="№ заказа" Type="bigint" Nullable="false" />
+          <Property Name="Суммарный вес" Type="decimal" Nullable="false" />
+          <Property Name="Суммарный объем" Type="int" Nullable="false" />
+          <Property Name="Дата доставки" Type="smalldatetime" Nullable="false" />
+          <Property Name="Время доставки" Type="smalldatetime" />
+          <Property Name="Стоимость доставки" Type="money" Nullable="false" />
+          <Property Name="Удаленность от офиса км" Type="bigint" Nullable="false" />
+          <Property Name="Вид доставки" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Дата заказа" Type="smalldatetime" Nullable="false" />
+          <Property Name="Время заказа" Type="smalldatetime" />
+          <Property Name="Стоимость заказа" Type="money" Nullable="false" />
+          <Property Name="Способ оплаты" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Способ получения" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ФИО" Type="varchar" Nullable="false" MaxLength="150" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+      предупреждение 6002: В таблице или представлении "KompShop.dbo.View_Покупатель2" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.
+      -->
+        <EntityType Name="View_Покупатель2">
+          <Key>
+            <PropertyRef Name="Телефон" />
+            <PropertyRef Name="ФИО" />
+            <PropertyRef Name="Адрес" />
+            <PropertyRef Name="Дата рождения" />
+            <PropertyRef Name="Пол" />
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="Телефон" Type="numeric" Nullable="false" />
+          <Property Name="ФИО" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="Адрес" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="Дата рождения" Type="smalldatetime" Nullable="false" />
+          <Property Name="Пол" Type="bit" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+      предупреждение 6002: В таблице или представлении "KompShop.dbo.View_Пользователь" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.
+      -->
+        <EntityType Name="View_Пользователь">
+          <Key>
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="ФИО" />
+            <PropertyRef Name="Адрес" />
+            <PropertyRef Name="Телефон" />
+            <PropertyRef Name="Номер кредитной карты" />
+            <PropertyRef Name="Срок истечения" />
+            <PropertyRef Name="Дата регистрации" />
+            <PropertyRef Name="Дата рождения" />
+            <PropertyRef Name="Пол" />
+          </Key>
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="ФИО" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="Адрес" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="Телефон" Type="numeric" Nullable="false" />
+          <Property Name="Номер кредитной карты" Type="numeric" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="Срок истечения" Type="smalldatetime" Nullable="false" />
+          <Property Name="Дата регистрации" Type="smalldatetime" Nullable="false" />
+          <Property Name="Дата рождения" Type="smalldatetime" Nullable="false" />
+          <Property Name="Пол" Type="bit" Nullable="false" />
+          <Property Name="Образование" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+      предупреждение 6002: В таблице или представлении "KompShop.dbo.View_Товар" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.
+      -->
+        <EntityType Name="View_Товар">
+          <Key>
+            <PropertyRef Name="Цена товара" />
+            <PropertyRef Name="Название" />
+          </Key>
+          <Property Name="Цена товара" Type="smallmoney" Nullable="false" />
+          <Property Name="Название" Type="varchar" Nullable="false" MaxLength="150" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+      предупреждение 6002: В таблице или представлении "KompShop.dbo.View_Товары" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.
+      -->
+        <EntityType Name="View_Товары">
+          <Key>
+            <PropertyRef Name="Цена товара" />
+            <PropertyRef Name="Вес товара" />
+            <PropertyRef Name="Название" />
+            <PropertyRef Name="Категория" />
+          </Key>
+          <Property Name="Цена товара" Type="smallmoney" Nullable="false" />
+          <Property Name="Вес товара" Type="decimal" Nullable="false" />
+          <Property Name="Длина" Type="bigint" />
+          <Property Name="Ширина" Type="bigint" />
+          <Property Name="Высота" Type="bigint" />
+          <Property Name="Изображение" Type="image" />
+          <Property Name="Уникальные характеристики" Type="varchar" />
+          <Property Name="Название" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="Гарантия мес" Type="int" />
+          <Property Name="Разрешение на возврат товара" Type="bit" />
+          <Property Name="Категория" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Подкатегория" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__aspnet_Me__UserI__6D0D32F4">
+          <End Role="aspnet_Users" Type="KompShopModel.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_Membership" Type="KompShopModel.Store.aspnet_Membership" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Membership">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Доставка_Заказ">
+          <End Role="Заказ" Type="KompShopModel.Store.Заказ" Multiplicity="1" />
+          <End Role="Доставка" Type="KompShopModel.Store.Доставка" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Заказ">
+              <PropertyRef Name="№ заказа" />
+            </Principal>
+            <Dependent Role="Доставка">
+              <PropertyRef Name="№ заказа" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Доставка_Сотрудник">
+          <End Role="Сотрудник" Type="KompShopModel.Store.Сотрудник" Multiplicity="1" />
+          <End Role="Доставка" Type="KompShopModel.Store.Доставка" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Сотрудник">
+              <PropertyRef Name="Табельный номер" />
+            </Principal>
+            <Dependent Role="Доставка">
+              <PropertyRef Name="Табельный номер" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Заказ Товар_Заказ">
+          <End Role="Заказ" Type="KompShopModel.Store.Заказ" Multiplicity="1" />
+          <End Role="Заказ Товар" Type="KompShopModel.Store.Заказ Товар" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Заказ">
+              <PropertyRef Name="№ заказа" />
+            </Principal>
+            <Dependent Role="Заказ Товар">
+              <PropertyRef Name="№ заказа" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Заказ Товар_Товар">
+          <End Role="Товар" Type="KompShopModel.Store.Товар" Multiplicity="1" />
+          <End Role="Заказ Товар" Type="KompShopModel.Store.Заказ Товар" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Товар">
+              <PropertyRef Name="id товара" />
+            </Principal>
+            <Dependent Role="Заказ Товар">
+              <PropertyRef Name="id товара" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Заказ_Покупатель">
+          <End Role="Покупатель" Type="KompShopModel.Store.Покупатель" Multiplicity="0..1" />
+          <End Role="Заказ" Type="KompShopModel.Store.Заказ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Покупатель">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Заказ">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Кредитная карта_Покупатель">
+          <End Role="Покупатель" Type="KompShopModel.Store.Покупатель" Multiplicity="1" />
+          <End Role="Кредитная карта" Type="KompShopModel.Store.Кредитная карта" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Покупатель">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Кредитная карта">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Оценка_Покупатель">
+          <End Role="Покупатель" Type="KompShopModel.Store.Покупатель" Multiplicity="1" />
+          <End Role="Оценка" Type="KompShopModel.Store.Оценка" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Покупатель">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Оценка">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Оценка_Товар">
+          <End Role="Товар" Type="KompShopModel.Store.Товар" Multiplicity="1" />
+          <End Role="Оценка" Type="KompShopModel.Store.Оценка" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Товар">
+              <PropertyRef Name="id товара" />
+            </Principal>
+            <Dependent Role="Оценка">
+              <PropertyRef Name="id_товара" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Покупатель_aspnet_Users1">
+          <End Role="aspnet_Users" Type="KompShopModel.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="Покупатель" Type="KompShopModel.Store.Покупатель" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Покупатель">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Телефон/Покупатель_Покупатель">
+          <End Role="Покупатель" Type="KompShopModel.Store.Покупатель" Multiplicity="1" />
+          <End Role="Телефон/Покупатель" Type="KompShopModel.Store.Телефон/Покупатель" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Покупатель">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Телефон/Покупатель">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Товар_Категория1">
+          <End Role="Категория" Type="KompShopModel.Store.Категория" Multiplicity="1" />
+          <End Role="Товар" Type="KompShopModel.Store.Товар" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Категория">
+              <PropertyRef Name="Подкатегория" />
+            </Principal>
+            <Dependent Role="Товар">
+              <PropertyRef Name="Подкатегория" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KompShopModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="aspnet_Membership" EntityType="KompShopModel.aspnet_Membership" />
+          <EntitySet Name="aspnet_Users" EntityType="KompShopModel.aspnet_Users" />
+          <EntitySet Name="Доставка" EntityType="KompShopModel.Доставка" />
+          <EntitySet Name="Заказ" EntityType="KompShopModel.Заказ" />
+          <EntitySet Name="Заказ_Товар" EntityType="KompShopModel.Заказ_Товар" />
+          <EntitySet Name="Кредитная_карта" EntityType="KompShopModel.Кредитная_карта" />
+          <EntitySet Name="Оценка" EntityType="KompShopModel.Оценка" />
+          <EntitySet Name="Покупатель" EntityType="KompShopModel.Покупатель" />
+          <EntitySet Name="Сотрудник" EntityType="KompShopModel.Сотрудник" />
+          <EntitySet Name="Телефон_Покупатель" EntityType="KompShopModel.Телефон_Покупатель" />
+          <EntitySet Name="View_Доставка" EntityType="KompShopModel.View_Доставка" />
+          <EntitySet Name="View_Заказ2" EntityType="KompShopModel.View_Заказ2" />
+          <EntitySet Name="View_Корзина" EntityType="KompShopModel.View_Корзина" />
+          <EntitySet Name="View_Оформленный_заказ" EntityType="KompShopModel.View_Оформленный_заказ" />
+          <EntitySet Name="View_Покупатель2" EntityType="KompShopModel.View_Покупатель2" />
+          <EntitySet Name="View_Пользователь" EntityType="KompShopModel.View_Пользователь" />
+          <EntitySet Name="View_Товар" EntityType="KompShopModel.View_Товар" />
+          <AssociationSet Name="FK__aspnet_Me__UserI__6D0D32F4" Association="KompShopModel.FK__aspnet_Me__UserI__6D0D32F4">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Покупатель_aspnet_Users1" Association="KompShopModel.FK_Покупатель_aspnet_Users1">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="Покупатель" EntitySet="Покупатель" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Доставка_Заказ" Association="KompShopModel.FK_Доставка_Заказ">
+            <End Role="Заказ" EntitySet="Заказ" />
+            <End Role="Доставка" EntitySet="Доставка" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Доставка_Сотрудник" Association="KompShopModel.FK_Доставка_Сотрудник">
+            <End Role="Сотрудник" EntitySet="Сотрудник" />
+            <End Role="Доставка" EntitySet="Доставка" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Заказ_Товар_Заказ" Association="KompShopModel.FK_Заказ_Товар_Заказ">
+            <End Role="Заказ" EntitySet="Заказ" />
+            <End Role="Заказ_Товар" EntitySet="Заказ_Товар" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Заказ_Покупатель" Association="KompShopModel.FK_Заказ_Покупатель">
+            <End Role="Покупатель" EntitySet="Покупатель" />
+            <End Role="Заказ" EntitySet="Заказ" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Кредитная_карта_Покупатель" Association="KompShopModel.FK_Кредитная_карта_Покупатель">
+            <End Role="Покупатель" EntitySet="Покупатель" />
+            <End Role="Кредитная_карта" EntitySet="Кредитная_карта" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Оценка_Покупатель" Association="KompShopModel.FK_Оценка_Покупатель">
+            <End Role="Покупатель" EntitySet="Покупатель" />
+            <End Role="Оценка" EntitySet="Оценка" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Телефон_Покупатель_Покупатель" Association="KompShopModel.FK_Телефон_Покупатель_Покупатель">
+            <End Role="Покупатель" EntitySet="Покупатель" />
+            <End Role="Телефон_Покупатель" EntitySet="Телефон_Покупатель" />
+          </AssociationSet>
+          <EntitySet Name="View_Товары" EntityType="KompShopModel.View_Товары" />
+          <EntitySet Name="Категория" EntityType="KompShopModel.Категория" />
+          <EntitySet Name="Товар" EntityType="KompShopModel.Товар" />
+          <AssociationSet Name="FK_Заказ_Товар_Товар" Association="KompShopModel.FK_Заказ_Товар_Товар">
+            <End Role="Товар" EntitySet="Товар" />
+            <End Role="Заказ_Товар" EntitySet="Заказ_Товар" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Товар_Категория1" Association="KompShopModel.FK_Товар_Категория1">
+            <End Role="Категория" EntitySet="Категория" />
+            <End Role="Товар" EntitySet="Товар" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Оценка_Товар" Association="KompShopModel.FK_Оценка_Товар">
+            <End Role="Товар" EntitySet="Товар" />
+            <End Role="Оценка" EntitySet="Оценка" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="aspnet_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="PasswordFormat" Nullable="false" />
+          <Property Type="String" Name="PasswordSalt" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MobilePIN" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LoweredEmail" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PasswordQuestion" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PasswordAnswer" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsApproved" Nullable="false" />
+          <Property Type="Boolean" Name="IsLockedOut" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="DateTime" Name="LastLoginDate" Nullable="false" />
+          <Property Type="DateTime" Name="LastPasswordChangedDate" Nullable="false" />
+          <Property Type="DateTime" Name="LastLockoutDate" Nullable="false" />
+          <Property Type="Int32" Name="FailedPasswordAttemptCount" Nullable="false" />
+          <Property Type="DateTime" Name="FailedPasswordAttemptWindowStart" Nullable="false" />
+          <Property Type="Int32" Name="FailedPasswordAnswerAttemptCount" Nullable="false" />
+          <Property Type="DateTime" Name="FailedPasswordAnswerAttemptWindowStart" Nullable="false" />
+          <Property Type="String" Name="Comment" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="aspnet_Users" Relationship="KompShopModel.FK__aspnet_Me__UserI__6D0D32F4" FromRole="aspnet_Membership" ToRole="aspnet_Users" />
+        </EntityType>
+        <EntityType Name="aspnet_Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LoweredUserName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MobileAlias" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsAnonymous" Nullable="false" />
+          <Property Type="DateTime" Name="LastActivityDate" Nullable="false" />
+          <NavigationProperty Name="aspnet_Membership" Relationship="KompShopModel.FK__aspnet_Me__UserI__6D0D32F4" FromRole="aspnet_Users" ToRole="aspnet_Membership" />
+          <NavigationProperty Name="Покупатель" Relationship="KompShopModel.FK_Покупатель_aspnet_Users1" FromRole="aspnet_Users" ToRole="Покупатель" />
+        </EntityType>
+        <EntityType Name="Доставка">
+          <Key>
+            <PropertyRef Name="C__заказа" />
+          </Key>
+          <Property Type="Int64" Name="C__заказа" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Decimal" Name="Суммарный_вес" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="Суммарный_объем" Nullable="false" />
+          <Property Type="DateTime" Name="Дата_доставки" Nullable="false" />
+          <Property Type="DateTime" Name="Время_доставки" />
+          <Property Type="Int64" Name="Удаленность_от_офиса_км" Nullable="false" />
+          <Property Type="Decimal" Name="Стоимость_доставки" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="String" Name="Статус_доставки" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Вид_доставки" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="Табельный_номер" Nullable="false" />
+          <NavigationProperty Name="Заказ" Relationship="KompShopModel.FK_Доставка_Заказ" FromRole="Доставка" ToRole="Заказ" />
+          <NavigationProperty Name="Сотрудник" Relationship="KompShopModel.FK_Доставка_Сотрудник" FromRole="Доставка" ToRole="Сотрудник" />
+        </EntityType>
+        <EntityType Name="Заказ">
+          <Key>
+            <PropertyRef Name="C__заказа" />
+          </Key>
+          <Property Type="Int64" Name="C__заказа" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="Дата_заказа" Nullable="false" />
+          <Property Type="DateTime" Name="Время_заказа" />
+          <Property Type="String" Name="Статус_заказа" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Стоимость_заказа" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="String" Name="Способ_оплаты" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Способ_получения" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Guid" Name="UserId" />
+          <NavigationProperty Name="Доставка" Relationship="KompShopModel.FK_Доставка_Заказ" FromRole="Заказ" ToRole="Доставка" />
+          <NavigationProperty Name="Заказ_Товар" Relationship="KompShopModel.FK_Заказ_Товар_Заказ" FromRole="Заказ" ToRole="Заказ_Товар" />
+          <NavigationProperty Name="Покупатель" Relationship="KompShopModel.FK_Заказ_Покупатель" FromRole="Заказ" ToRole="Покупатель" />
+        </EntityType>
+        <EntityType Name="Заказ_Товар">
+          <Key>
+            <PropertyRef Name="IdZakTov" />
+          </Key>
+          <Property Type="Int64" Name="C__заказа" Nullable="false" />
+          <Property Type="Int64" Name="id_товара" Nullable="false" />
+          <Property Type="Int64" Name="IdZakTov" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Количество" />
+          <NavigationProperty Name="Заказ" Relationship="KompShopModel.FK_Заказ_Товар_Заказ" FromRole="Заказ_Товар" ToRole="Заказ" />
+          <NavigationProperty Name="Товар" Relationship="KompShopModel.FK_Заказ_Товар_Товар" FromRole="Заказ_Товар" ToRole="Товар" />
+        </EntityType>
+        <EntityType Name="Кредитная_карта">
+          <Key>
+            <PropertyRef Name="Номер_кредитной_карты" />
+          </Key>
+          <Property Type="Decimal" Name="Номер_кредитной_карты" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="Проверочный_код" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Срок_истечения" Nullable="false" />
+          <Property Type="String" Name="Имя_владельца" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Покупатель" Relationship="KompShopModel.FK_Кредитная_карта_Покупатель" FromRole="Кредитная_карта" ToRole="Покупатель" />
+        </EntityType>
+        <EntityType Name="Оценка">
+          <Key>
+            <PropertyRef Name="id_оценки" />
+          </Key>
+          <Property Type="Byte" Name="Оценка1" Nullable="false" />
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="Int64" Name="id_товара" Nullable="false" />
+          <Property Type="Int64" Name="id_оценки" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Покупатель" Relationship="KompShopModel.FK_Оценка_Покупатель" FromRole="Оценка" ToRole="Покупатель" />
+          <NavigationProperty Name="Товар" Relationship="KompShopModel.FK_Оценка_Товар" FromRole="Оценка" ToRole="Товар" />
+        </EntityType>
+        <EntityType Name="Покупатель">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Type="String" Name="Адрес" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ФИО" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Дата_рождения" Nullable="false" />
+          <Property Type="DateTime" Name="Дата_регистрации" Nullable="false" />
+          <Property Type="Boolean" Name="Пол" Nullable="false" />
+          <Property Type="String" Name="Образование" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <NavigationProperty Name="aspnet_Users" Relationship="KompShopModel.FK_Покупатель_aspnet_Users1" FromRole="Покупатель" ToRole="aspnet_Users" />
+          <NavigationProperty Name="Заказ" Relationship="KompShopModel.FK_Заказ_Покупатель" FromRole="Покупатель" ToRole="Заказ" />
+          <NavigationProperty Name="Кредитная_карта" Relationship="KompShopModel.FK_Кредитная_карта_Покупатель" FromRole="Покупатель" ToRole="Кредитная_карта" />
+          <NavigationProperty Name="Оценка" Relationship="KompShopModel.FK_Оценка_Покупатель" FromRole="Покупатель" ToRole="Оценка" />
+          <NavigationProperty Name="Телефон_Покупатель" Relationship="KompShopModel.FK_Телефон_Покупатель_Покупатель" FromRole="Покупатель" ToRole="Телефон_Покупатель" />
+        </EntityType>
+        <EntityType Name="Сотрудник">
+          <Key>
+            <PropertyRef Name="Табельный_номер" />
+          </Key>
+          <Property Type="Int64" Name="Табельный_номер" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ФИО" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="Факс" />
+          <Property Type="Int64" Name="Телефон" Nullable="false" />
+          <Property Type="String" Name="Должность" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="E_mail" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Доставка" Relationship="KompShopModel.FK_Доставка_Сотрудник" FromRole="Сотрудник" ToRole="Доставка" />
+        </EntityType>
+        <EntityType Name="Телефон_Покупатель">
+          <Key>
+            <PropertyRef Name="Телефон" />
+          </Key>
+          <Property Type="Decimal" Name="Телефон" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <NavigationProperty Name="Покупатель" Relationship="KompShopModel.FK_Телефон_Покупатель_Покупатель" FromRole="Телефон_Покупатель" ToRole="Покупатель" />
+        </EntityType>
+        <EntityType Name="View_Доставка">
+          <Key>
+            <PropertyRef Name="C__заказа" />
+            <PropertyRef Name="Суммарный_вес" />
+            <PropertyRef Name="Суммарный_объем" />
+            <PropertyRef Name="Дата_доставки" />
+            <PropertyRef Name="Стоимость_доставки" />
+            <PropertyRef Name="Удаленность_от_офиса_км" />
+            <PropertyRef Name="Статус_доставки" />
+            <PropertyRef Name="Вид_доставки" />
+            <PropertyRef Name="Статус_заказа" />
+            <PropertyRef Name="Стоимость_заказа" />
+            <PropertyRef Name="Способ_оплаты" />
+            <PropertyRef Name="Способ_получения" />
+            <PropertyRef Name="ФИО" />
+            <PropertyRef Name="Телефон" />
+            <PropertyRef Name="Название" />
+          </Key>
+          <Property Type="Int64" Name="C__заказа" Nullable="false" />
+          <Property Type="Decimal" Name="Суммарный_вес" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="Суммарный_объем" Nullable="false" />
+          <Property Type="DateTime" Name="Дата_доставки" Nullable="false" />
+          <Property Type="DateTime" Name="Время_доставки" />
+          <Property Type="Decimal" Name="Стоимость_доставки" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Int64" Name="Удаленность_от_офиса_км" Nullable="false" />
+          <Property Type="String" Name="Статус_доставки" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Вид_доставки" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Статус_заказа" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Стоимость_заказа" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="String" Name="Способ_оплаты" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Способ_получения" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ФИО" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="Телефон" Nullable="false" />
+          <Property Type="String" Name="Название" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Разрешение_на_возврат_товара" />
+          <Property Type="Binary" Name="Изображение" MaxLength="Max" FixedLength="false" />
+          <Property Type="Int32" Name="Количество" />
+        </EntityType>
+        <EntityType Name="View_Заказ2">
+          <Key>
+            <PropertyRef Name="Категория" />
+            <PropertyRef Name="Цена_товара" />
+            <PropertyRef Name="Вес_товара" />
+            <PropertyRef Name="Название" />
+            <PropertyRef Name="Дата_заказа" />
+            <PropertyRef Name="Статус_заказа" />
+            <PropertyRef Name="Стоимость_заказа" />
+            <PropertyRef Name="Способ_оплаты" />
+            <PropertyRef Name="ФИО" />
+          </Key>
+          <Property Type="String" Name="Категория" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Подкатегория" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Цена_товара" Nullable="false" Precision="10" Scale="4" />
+          <Property Type="Decimal" Name="Вес_товара" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="Название" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Дата_заказа" Nullable="false" />
+          <Property Type="String" Name="Статус_заказа" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Стоимость_заказа" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="String" Name="Способ_оплаты" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ФИО" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="View_Корзина">
+          <Key>
+            <PropertyRef Name="Категория" />
+            <PropertyRef Name="Название" />
+            <PropertyRef Name="C__заказа" />
+            <PropertyRef Name="Цена_товара" />
+          </Key>
+          <Property Type="String" Name="Категория" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Подкатегория" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Название" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="C__заказа" Nullable="false" />
+          <Property Type="Int32" Name="Количество" />
+          <Property Type="Decimal" Name="Цена_товара" Nullable="false" Precision="10" Scale="4" />
+        </EntityType>
+        <EntityType Name="View_Оформленный_заказ">
+          <Key>
+            <PropertyRef Name="C__заказа" />
+            <PropertyRef Name="Суммарный_вес" />
+            <PropertyRef Name="Суммарный_объем" />
+            <PropertyRef Name="Дата_доставки" />
+            <PropertyRef Name="Стоимость_доставки" />
+            <PropertyRef Name="Удаленность_от_офиса_км" />
+            <PropertyRef Name="Вид_доставки" />
+            <PropertyRef Name="Дата_заказа" />
+            <PropertyRef Name="Стоимость_заказа" />
+            <PropertyRef Name="Способ_оплаты" />
+            <PropertyRef Name="Способ_получения" />
+            <PropertyRef Name="ФИО" />
+          </Key>
+          <Property Type="Int64" Name="C__заказа" Nullable="false" />
+          <Property Type="Decimal" Name="Суммарный_вес" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="Суммарный_объем" Nullable="false" />
+          <Property Type="DateTime" Name="Дата_доставки" Nullable="false" />
+          <Property Type="DateTime" Name="Время_доставки" />
+          <Property Type="Decimal" Name="Стоимость_доставки" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Int64" Name="Удаленность_от_офиса_км" Nullable="false" />
+          <Property Type="String" Name="Вид_доставки" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Дата_заказа" Nullable="false" />
+          <Property Type="DateTime" Name="Время_заказа" />
+          <Property Type="Decimal" Name="Стоимость_заказа" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="String" Name="Способ_оплаты" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Способ_получения" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ФИО" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="View_Покупатель2">
+          <Key>
+            <PropertyRef Name="Телефон" />
+            <PropertyRef Name="ФИО" />
+            <PropertyRef Name="Адрес" />
+            <PropertyRef Name="Дата_рождения" />
+            <PropertyRef Name="Пол" />
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Type="Decimal" Name="Телефон" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="ФИО" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Адрес" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Дата_рождения" Nullable="false" />
+          <Property Type="Boolean" Name="Пол" Nullable="false" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="View_Пользователь">
+          <Key>
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="ФИО" />
+            <PropertyRef Name="Адрес" />
+            <PropertyRef Name="Телефон" />
+            <PropertyRef Name="Номер_кредитной_карты" />
+            <PropertyRef Name="Срок_истечения" />
+            <PropertyRef Name="Дата_регистрации" />
+            <PropertyRef Name="Дата_рождения" />
+            <PropertyRef Name="Пол" />
+          </Key>
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ФИО" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Адрес" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Телефон" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Номер_кредитной_карты" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="Email" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Срок_истечения" Nullable="false" />
+          <Property Type="DateTime" Name="Дата_регистрации" Nullable="false" />
+          <Property Type="DateTime" Name="Дата_рождения" Nullable="false" />
+          <Property Type="Boolean" Name="Пол" Nullable="false" />
+          <Property Type="String" Name="Образование" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="View_Товар">
+          <Key>
+            <PropertyRef Name="Цена_товара" />
+            <PropertyRef Name="Название" />
+          </Key>
+          <Property Type="Decimal" Name="Цена_товара" Nullable="false" Precision="10" Scale="4" />
+          <Property Type="String" Name="Название" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK__aspnet_Me__UserI__6D0D32F4">
+          <End Type="KompShopModel.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
+          <End Type="KompShopModel.aspnet_Membership" Role="aspnet_Membership" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Membership">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Покупатель_aspnet_Users1">
+          <End Type="KompShopModel.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
+          <End Type="KompShopModel.Покупатель" Role="Покупатель" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Покупатель">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Доставка_Заказ">
+          <End Type="KompShopModel.Заказ" Role="Заказ" Multiplicity="1" />
+          <End Type="KompShopModel.Доставка" Role="Доставка" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Заказ">
+              <PropertyRef Name="C__заказа" />
+            </Principal>
+            <Dependent Role="Доставка">
+              <PropertyRef Name="C__заказа" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Доставка_Сотрудник">
+          <End Type="KompShopModel.Сотрудник" Role="Сотрудник" Multiplicity="1" />
+          <End Type="KompShopModel.Доставка" Role="Доставка" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Сотрудник">
+              <PropertyRef Name="Табельный_номер" />
+            </Principal>
+            <Dependent Role="Доставка">
+              <PropertyRef Name="Табельный_номер" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Заказ_Товар_Заказ">
+          <End Type="KompShopModel.Заказ" Role="Заказ" Multiplicity="1" />
+          <End Type="KompShopModel.Заказ_Товар" Role="Заказ_Товар" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Заказ">
+              <PropertyRef Name="C__заказа" />
+            </Principal>
+            <Dependent Role="Заказ_Товар">
+              <PropertyRef Name="C__заказа" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Заказ_Покупатель">
+          <End Type="KompShopModel.Покупатель" Role="Покупатель" Multiplicity="0..1" />
+          <End Type="KompShopModel.Заказ" Role="Заказ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Покупатель">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Заказ">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Кредитная_карта_Покупатель">
+          <End Type="KompShopModel.Покупатель" Role="Покупатель" Multiplicity="1" />
+          <End Type="KompShopModel.Кредитная_карта" Role="Кредитная_карта" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Покупатель">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Кредитная_карта">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Оценка_Покупатель">
+          <End Type="KompShopModel.Покупатель" Role="Покупатель" Multiplicity="1" />
+          <End Type="KompShopModel.Оценка" Role="Оценка" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Покупатель">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Оценка">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Телефон_Покупатель_Покупатель">
+          <End Type="KompShopModel.Покупатель" Role="Покупатель" Multiplicity="1" />
+          <End Type="KompShopModel.Телефон_Покупатель" Role="Телефон_Покупатель" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Покупатель">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Телефон_Покупатель">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="View_Товары">
+          <Key>
+            <PropertyRef Name="Цена_товара" />
+            <PropertyRef Name="Вес_товара" />
+            <PropertyRef Name="Название" />
+            <PropertyRef Name="Категория" />
+          </Key>
+          <Property Type="Decimal" Name="Цена_товара" Nullable="false" Precision="10" Scale="4" />
+          <Property Type="Decimal" Name="Вес_товара" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Int64" Name="Длина" />
+          <Property Type="Int64" Name="Ширина" />
+          <Property Type="Int64" Name="Высота" />
+          <Property Type="Binary" Name="Изображение" MaxLength="Max" FixedLength="false" />
+          <Property Type="String" Name="Уникальные_характеристики" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Название" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Гарантия_мес" />
+          <Property Type="Boolean" Name="Разрешение_на_возврат_товара" />
+          <Property Type="String" Name="Категория" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Подкатегория" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Категория">
+          <Key>
+            <PropertyRef Name="Подкатегория" />
+          </Key>
+          <Property Type="String" Name="Категория1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Подкатегория" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Товар" Relationship="KompShopModel.FK_Товар_Категория1" FromRole="Категория" ToRole="Товар" />
+        </EntityType>
+        <EntityType Name="Товар">
+          <Key>
+            <PropertyRef Name="id_товара" />
+          </Key>
+          <Property Type="Int64" Name="id_товара" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Decimal" Name="Цена_товара" Nullable="false" Precision="10" Scale="4" />
+          <Property Type="Decimal" Name="Вес_товара" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Int64" Name="Длина" />
+          <Property Type="Int64" Name="Ширина" />
+          <Property Type="Int64" Name="Высота" />
+          <Property Type="Binary" Name="Изображение" MaxLength="Max" FixedLength="false" />
+          <Property Type="String" Name="Уникальные_характеристики" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Подкатегория" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Название" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Гарантия_мес" />
+          <Property Type="Boolean" Name="Разрешение_на_возврат_товара" />
+          <NavigationProperty Name="Заказ_Товар" Relationship="KompShopModel.FK_Заказ_Товар_Товар" FromRole="Товар" ToRole="Заказ_Товар" />
+          <NavigationProperty Name="Категория" Relationship="KompShopModel.FK_Товар_Категория1" FromRole="Товар" ToRole="Категория" />
+          <NavigationProperty Name="Оценка" Relationship="KompShopModel.FK_Оценка_Товар" FromRole="Товар" ToRole="Оценка" />
+        </EntityType>
+        <Association Name="FK_Заказ_Товар_Товар">
+          <End Type="KompShopModel.Товар" Role="Товар" Multiplicity="1" />
+          <End Type="KompShopModel.Заказ_Товар" Role="Заказ_Товар" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Товар">
+              <PropertyRef Name="id_товара" />
+            </Principal>
+            <Dependent Role="Заказ_Товар">
+              <PropertyRef Name="id_товара" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Товар_Категория1">
+          <End Type="KompShopModel.Категория" Role="Категория" Multiplicity="1" />
+          <End Type="KompShopModel.Товар" Role="Товар" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Категория">
+              <PropertyRef Name="Подкатегория" />
+            </Principal>
+            <Dependent Role="Товар">
+              <PropertyRef Name="Подкатегория" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Оценка_Товар">
+          <End Type="KompShopModel.Товар" Role="Товар" Multiplicity="1" />
+          <End Type="KompShopModel.Оценка" Role="Оценка" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Товар">
+              <PropertyRef Name="id_товара" />
+            </Principal>
+            <Dependent Role="Оценка">
+              <PropertyRef Name="id_товара" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KompShopModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="aspnet_Membership">
+            <EntityTypeMapping TypeName="KompShopModel.aspnet_Membership">
+              <MappingFragment StoreEntitySet="aspnet_Membership">
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptWindowStart" ColumnName="FailedPasswordAnswerAttemptWindowStart" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+                <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+                <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+                <ScalarProperty Name="LastLockoutDate" ColumnName="LastLockoutDate" />
+                <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+                <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+                <ScalarProperty Name="LoweredEmail" ColumnName="LoweredEmail" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MobilePIN" ColumnName="MobilePIN" />
+                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+                <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Users">
+            <EntityTypeMapping TypeName="KompShopModel.aspnet_Users">
+              <MappingFragment StoreEntitySet="aspnet_Users">
+                <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+                <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+                <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
+                <ScalarProperty Name="LoweredUserName" ColumnName="LoweredUserName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Доставка">
+            <EntityTypeMapping TypeName="KompShopModel.Доставка">
+              <MappingFragment StoreEntitySet="Доставка">
+                <ScalarProperty Name="Табельный_номер" ColumnName="Табельный номер" />
+                <ScalarProperty Name="Вид_доставки" ColumnName="Вид доставки" />
+                <ScalarProperty Name="Статус_доставки" ColumnName="Статус доставки" />
+                <ScalarProperty Name="Стоимость_доставки" ColumnName="Стоимость доставки" />
+                <ScalarProperty Name="Удаленность_от_офиса_км" ColumnName="Удаленность от офиса км" />
+                <ScalarProperty Name="Время_доставки" ColumnName="Время доставки" />
+                <ScalarProperty Name="Дата_доставки" ColumnName="Дата доставки" />
+                <ScalarProperty Name="Суммарный_объем" ColumnName="Суммарный объем" />
+                <ScalarProperty Name="Суммарный_вес" ColumnName="Суммарный вес" />
+                <ScalarProperty Name="C__заказа" ColumnName="№ заказа" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Заказ">
+            <EntityTypeMapping TypeName="KompShopModel.Заказ">
+              <MappingFragment StoreEntitySet="Заказ">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Способ_получения" ColumnName="Способ получения" />
+                <ScalarProperty Name="Способ_оплаты" ColumnName="Способ оплаты" />
+                <ScalarProperty Name="Стоимость_заказа" ColumnName="Стоимость заказа" />
+                <ScalarProperty Name="Статус_заказа" ColumnName="Статус заказа" />
+                <ScalarProperty Name="Время_заказа" ColumnName="Время заказа" />
+                <ScalarProperty Name="Дата_заказа" ColumnName="Дата заказа" />
+                <ScalarProperty Name="C__заказа" ColumnName="№ заказа" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Заказ_Товар">
+            <EntityTypeMapping TypeName="KompShopModel.Заказ_Товар">
+              <MappingFragment StoreEntitySet="Заказ Товар">
+                <ScalarProperty Name="Количество" ColumnName="Количество" />
+                <ScalarProperty Name="IdZakTov" ColumnName="IdZakTov" />
+                <ScalarProperty Name="id_товара" ColumnName="id товара" />
+                <ScalarProperty Name="C__заказа" ColumnName="№ заказа" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Кредитная_карта">
+            <EntityTypeMapping TypeName="KompShopModel.Кредитная_карта">
+              <MappingFragment StoreEntitySet="Кредитная карта">
+                <ScalarProperty Name="Имя_владельца" ColumnName="Имя владельца" />
+                <ScalarProperty Name="Срок_истечения" ColumnName="Срок истечения" />
+                <ScalarProperty Name="Проверочный_код" ColumnName="Проверочный код" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Номер_кредитной_карты" ColumnName="Номер кредитной карты" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Оценка">
+            <EntityTypeMapping TypeName="KompShopModel.Оценка">
+              <MappingFragment StoreEntitySet="Оценка">
+                <ScalarProperty Name="id_оценки" ColumnName="id_оценки" />
+                <ScalarProperty Name="id_товара" ColumnName="id_товара" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Оценка1" ColumnName="Оценка" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Покупатель">
+            <EntityTypeMapping TypeName="KompShopModel.Покупатель">
+              <MappingFragment StoreEntitySet="Покупатель">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Образование" ColumnName="Образование" />
+                <ScalarProperty Name="Пол" ColumnName="Пол" />
+                <ScalarProperty Name="Дата_регистрации" ColumnName="Дата регистрации" />
+                <ScalarProperty Name="Дата_рождения" ColumnName="Дата рождения" />
+                <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+                <ScalarProperty Name="Адрес" ColumnName="Адрес" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Сотрудник">
+            <EntityTypeMapping TypeName="KompShopModel.Сотрудник">
+              <MappingFragment StoreEntitySet="Сотрудник">
+                <ScalarProperty Name="E_mail" ColumnName="E-mail" />
+                <ScalarProperty Name="Должность" ColumnName="Должность" />
+                <ScalarProperty Name="Телефон" ColumnName="Телефон" />
+                <ScalarProperty Name="Факс" ColumnName="Факс" />
+                <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+                <ScalarProperty Name="Табельный_номер" ColumnName="Табельный номер" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Телефон_Покупатель">
+            <EntityTypeMapping TypeName="KompShopModel.Телефон_Покупатель">
+              <MappingFragment StoreEntitySet="Телефон/Покупатель">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Телефон" ColumnName="Телефон" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Доставка">
+            <EntityTypeMapping TypeName="KompShopModel.View_Доставка">
+              <MappingFragment StoreEntitySet="View_Доставка">
+                <ScalarProperty Name="Количество" ColumnName="Количество" />
+                <ScalarProperty Name="Изображение" ColumnName="Изображение" />
+                <ScalarProperty Name="Разрешение_на_возврат_товара" ColumnName="Разрешение на возврат товара" />
+                <ScalarProperty Name="Название" ColumnName="Название" />
+                <ScalarProperty Name="Телефон" ColumnName="Телефон" />
+                <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+                <ScalarProperty Name="Способ_получения" ColumnName="Способ получения" />
+                <ScalarProperty Name="Способ_оплаты" ColumnName="Способ оплаты" />
+                <ScalarProperty Name="Стоимость_заказа" ColumnName="Стоимость заказа" />
+                <ScalarProperty Name="Статус_заказа" ColumnName="Статус заказа" />
+                <ScalarProperty Name="Вид_доставки" ColumnName="Вид доставки" />
+                <ScalarProperty Name="Статус_доставки" ColumnName="Статус доставки" />
+                <ScalarProperty Name="Удаленность_от_офиса_км" ColumnName="Удаленность от офиса км" />
+                <ScalarProperty Name="Стоимость_доставки" ColumnName="Стоимость доставки" />
+                <ScalarProperty Name="Время_доставки" ColumnName="Время доставки" />
+                <ScalarProperty Name="Дата_доставки" ColumnName="Дата доставки" />
+                <ScalarProperty Name="Суммарный_объем" ColumnName="Суммарный объем" />
+                <ScalarProperty Name="Суммарный_вес" ColumnName="Суммарный вес" />
+                <ScalarProperty Name="C__заказа" ColumnName="№ заказа" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Заказ2">
+            <EntityTypeMapping TypeName="KompShopModel.View_Заказ2">
+              <MappingFragment StoreEntitySet="View_Заказ2">
+                <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+                <ScalarProperty Name="Способ_оплаты" ColumnName="Способ оплаты" />
+                <ScalarProperty Name="Стоимость_заказа" ColumnName="Стоимость заказа" />
+                <ScalarProperty Name="Статус_заказа" ColumnName="Статус заказа" />
+                <ScalarProperty Name="Дата_заказа" ColumnName="Дата заказа" />
+                <ScalarProperty Name="Название" ColumnName="Название" />
+                <ScalarProperty Name="Вес_товара" ColumnName="Вес товара" />
+                <ScalarProperty Name="Цена_товара" ColumnName="Цена товара" />
+                <ScalarProperty Name="Подкатегория" ColumnName="Подкатегория" />
+                <ScalarProperty Name="Категория" ColumnName="Категория" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Корзина">
+            <EntityTypeMapping TypeName="KompShopModel.View_Корзина">
+              <MappingFragment StoreEntitySet="View_Корзина">
+                <ScalarProperty Name="Цена_товара" ColumnName="Цена товара" />
+                <ScalarProperty Name="Количество" ColumnName="Количество" />
+                <ScalarProperty Name="C__заказа" ColumnName="№ заказа" />
+                <ScalarProperty Name="Название" ColumnName="Название" />
+                <ScalarProperty Name="Подкатегория" ColumnName="Подкатегория" />
+                <ScalarProperty Name="Категория" ColumnName="Категория" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Оформленный_заказ">
+            <EntityTypeMapping TypeName="KompShopModel.View_Оформленный_заказ">
+              <MappingFragment StoreEntitySet="View_Оформленный_заказ">
+                <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+                <ScalarProperty Name="Способ_получения" ColumnName="Способ получения" />
+                <ScalarProperty Name="Способ_оплаты" ColumnName="Способ оплаты" />
+                <ScalarProperty Name="Стоимость_заказа" ColumnName="Стоимость заказа" />
+                <ScalarProperty Name="Время_заказа" ColumnName="Время заказа" />
+                <ScalarProperty Name="Дата_заказа" ColumnName="Дата заказа" />
+                <ScalarProperty Name="Вид_доставки" ColumnName="Вид доставки" />
+                <ScalarProperty Name="Удаленность_от_офиса_км" ColumnName="Удаленность от офиса км" />
+                <ScalarProperty Name="Стоимость_доставки" ColumnName="Стоимость доставки" />
+                <ScalarProperty Name="Время_доставки" ColumnName="Время доставки" />
+                <ScalarProperty Name="Дата_доставки" ColumnName="Дата доставки" />
+                <ScalarProperty Name="Суммарный_объем" ColumnName="Суммарный объем" />
+                <ScalarProperty Name="Суммарный_вес" ColumnName="Суммарный вес" />
+                <ScalarProperty Name="C__заказа" ColumnName="№ заказа" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Покупатель2">
+            <EntityTypeMapping TypeName="KompShopModel.View_Покупатель2">
+              <MappingFragment StoreEntitySet="View_Покупатель2">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Пол" ColumnName="Пол" />
+                <ScalarProperty Name="Дата_рождения" ColumnName="Дата рождения" />
+                <ScalarProperty Name="Адрес" ColumnName="Адрес" />
+                <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+                <ScalarProperty Name="Телефон" ColumnName="Телефон" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Пользователь">
+            <EntityTypeMapping TypeName="KompShopModel.View_Пользователь">
+              <MappingFragment StoreEntitySet="View_Пользователь">
+                <ScalarProperty Name="Образование" ColumnName="Образование" />
+                <ScalarProperty Name="Пол" ColumnName="Пол" />
+                <ScalarProperty Name="Дата_рождения" ColumnName="Дата рождения" />
+                <ScalarProperty Name="Дата_регистрации" ColumnName="Дата регистрации" />
+                <ScalarProperty Name="Срок_истечения" ColumnName="Срок истечения" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Номер_кредитной_карты" ColumnName="Номер кредитной карты" />
+                <ScalarProperty Name="Телефон" ColumnName="Телефон" />
+                <ScalarProperty Name="Адрес" ColumnName="Адрес" />
+                <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Товар">
+            <EntityTypeMapping TypeName="KompShopModel.View_Товар">
+              <MappingFragment StoreEntitySet="View_Товар">
+                <ScalarProperty Name="Название" ColumnName="Название" />
+                <ScalarProperty Name="Цена_товара" ColumnName="Цена товара" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Товары">
+            <EntityTypeMapping TypeName="KompShopModel.View_Товары">
+              <MappingFragment StoreEntitySet="View_Товары">
+                <ScalarProperty Name="Подкатегория" ColumnName="Подкатегория" />
+                <ScalarProperty Name="Категория" ColumnName="Категория" />
+                <ScalarProperty Name="Разрешение_на_возврат_товара" ColumnName="Разрешение на возврат товара" />
+                <ScalarProperty Name="Гарантия_мес" ColumnName="Гарантия мес" />
+                <ScalarProperty Name="Название" ColumnName="Название" />
+                <ScalarProperty Name="Уникальные_характеристики" ColumnName="Уникальные характеристики" />
+                <ScalarProperty Name="Изображение" ColumnName="Изображение" />
+                <ScalarProperty Name="Высота" ColumnName="Высота" />
+                <ScalarProperty Name="Ширина" ColumnName="Ширина" />
+                <ScalarProperty Name="Длина" ColumnName="Длина" />
+                <ScalarProperty Name="Вес_товара" ColumnName="Вес товара" />
+                <ScalarProperty Name="Цена_товара" ColumnName="Цена товара" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Категория">
+            <EntityTypeMapping TypeName="KompShopModel.Категория">
+              <MappingFragment StoreEntitySet="Категория">
+                <ScalarProperty Name="Подкатегория" ColumnName="Подкатегория" />
+                <ScalarProperty Name="Категория1" ColumnName="Категория" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Товар">
+            <EntityTypeMapping TypeName="KompShopModel.Товар">
+              <MappingFragment StoreEntitySet="Товар">
+                <ScalarProperty Name="Разрешение_на_возврат_товара" ColumnName="Разрешение на возврат товара" />
+                <ScalarProperty Name="Гарантия_мес" ColumnName="Гарантия мес" />
+                <ScalarProperty Name="Название" ColumnName="Название" />
+                <ScalarProperty Name="Подкатегория" ColumnName="Подкатегория" />
+                <ScalarProperty Name="Уникальные_характеристики" ColumnName="Уникальные характеристики" />
+                <ScalarProperty Name="Изображение" ColumnName="Изображение" />
+                <ScalarProperty Name="Высота" ColumnName="Высота" />
+                <ScalarProperty Name="Ширина" ColumnName="Ширина" />
+                <ScalarProperty Name="Длина" ColumnName="Длина" />
+                <ScalarProperty Name="Вес_товара" ColumnName="Вес товара" />
+                <ScalarProperty Name="Цена_товара" ColumnName="Цена товара" />
+                <ScalarProperty Name="id_товара" ColumnName="id товара" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="EntitiesDataModel" ZoomLevel="67">
+        <EntityTypeShape EntityType="KompShopModel.aspnet_Membership" Width="1.5" PointX="3" PointY="4.875" Height="5.2494108072916674" />
+        <EntityTypeShape EntityType="KompShopModel.aspnet_Users" Width="1.5" PointX="0.75" PointY="10.75" Height="2.7494921875000031" />
+        <EntityTypeShape EntityType="KompShopModel.Доставка" Width="1.5" PointX="7.5" PointY="10.75" Height="3.3263964843750067" />
+        <EntityTypeShape EntityType="KompShopModel.Заказ" Width="1.5" PointX="5.25" PointY="10.875" Height="3.1340950520833246" />
+        <EntityTypeShape EntityType="KompShopModel.Заказ_Товар" Width="1.5" PointX="10.5" PointY="11.375" Height="2.1725878906250102" />
+        <EntityTypeShape EntityType="KompShopModel.Кредитная_карта" Width="1.5" PointX="5.25" PointY="14.75" Height="2.1725878906249978" />
+        <EntityTypeShape EntityType="KompShopModel.Оценка" Width="1.5" PointX="8.25" PointY="15" Height="2.1725878906250102" />
+        <EntityTypeShape EntityType="KompShopModel.Покупатель" Width="1.5" PointX="3" PointY="13.375" Height="3.326396484375012" />
+        <EntityTypeShape EntityType="KompShopModel.Сотрудник" Width="1.5" PointX="5.25" PointY="7.25" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="KompShopModel.Телефон_Покупатель" Width="1.5" PointX="5.25" PointY="20.625" Height="1.595683593749996" />
+        <EntityTypeShape EntityType="KompShopModel.View_Доставка" Width="1.5" PointX="10.75" PointY="0.75" Height="4.6725065104166674" />
+        <EntityTypeShape EntityType="KompShopModel.View_Заказ2" Width="1.5" PointX="0.75" PointY="0.75" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="KompShopModel.View_Корзина" Width="1.5" PointX="2.75" PointY="0.75" Height="2.1725878906250102" />
+        <EntityTypeShape EntityType="KompShopModel.View_Оформленный_заказ" Width="1.5" PointX="10.75" PointY="6.75" Height="3.7109993489583246" />
+        <EntityTypeShape EntityType="KompShopModel.View_Покупатель2" Width="1.5" PointX="12.75" PointY="0.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="KompShopModel.View_Пользователь" Width="1.5" PointX="12.75" PointY="4.75" Height="3.1340950520833246" />
+        <EntityTypeShape EntityType="KompShopModel.View_Товар" Width="1.5" PointX="4.75" PointY="0.75" Height="1.4033821614583246" />
+        <AssociationConnector Association="KompShopModel.FK__aspnet_Me__UserI__6D0D32F4" >
+          <ConnectorPoint PointX="1.5" PointY="10.75" />
+          <ConnectorPoint PointX="1.5" PointY="7.4997054036458337" />
+          <ConnectorPoint PointX="3" PointY="7.4997054036458337" />
+        </AssociationConnector>
+        <AssociationConnector Association="KompShopModel.FK_Покупатель_aspnet_Users1" >
+          <ConnectorPoint PointX="2.25" PointY="12.062499500000001" />
+          <ConnectorPoint PointX="3.75" PointY="12.062499500000001" />
+          <ConnectorPoint PointX="3.75" PointY="13.375" />
+        </AssociationConnector>
+        <AssociationConnector Association="KompShopModel.FK_Доставка_Заказ" >
+          <ConnectorPoint PointX="6.75" PointY="12.442047526041662" />
+          <ConnectorPoint PointX="7.5" PointY="12.442047526041662" />
+        </AssociationConnector>
+        <AssociationConnector Association="KompShopModel.FK_Доставка_Сотрудник" >
+          <ConnectorPoint PointX="6.75" PointY="8.4324446614583337" />
+          <ConnectorPoint PointX="8.25" PointY="8.4324446614583337" />
+          <ConnectorPoint PointX="8.25" PointY="10.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="KompShopModel.FK_Заказ_Товар_Заказ" >
+          <ConnectorPoint PointX="6" PointY="14.009095052083325" />
+          <ConnectorPoint PointX="6" PointY="14.326396484375007" />
+          <ConnectorPoint PointX="10.125" PointY="14.326396484375007" />
+          <ConnectorPoint PointX="10.125" PointY="12.4612939453125" />
+          <ConnectorPoint PointX="10.5" PointY="12.4612939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="KompShopModel.FK_Заказ_Покупатель" >
+          <ConnectorPoint PointX="4.5" PointY="13.692047526041662" />
+          <ConnectorPoint PointX="5.25" PointY="13.692047526041662" />
+        </AssociationConnector>
+        <AssociationConnector Association="KompShopModel.FK_Кредитная_карта_Покупатель" >
+          <ConnectorPoint PointX="4.5" PointY="15.725698242187505" />
+          <ConnectorPoint PointX="5.25" PointY="15.725698242187505" />
+        </AssociationConnector>
+        <AssociationConnector Association="KompShopModel.FK_Оценка_Покупатель" >
+          <ConnectorPoint PointX="4.5" PointY="14.506948242187503" />
+          <ConnectorPoint PointX="9.40625" PointY="14.506948242187503" />
+          <ConnectorPoint PointX="9.40625" PointY="15" />
+        </AssociationConnector>
+        <AssociationConnector Association="KompShopModel.FK_Телефон_Покупатель_Покупатель" >
+          <ConnectorPoint PointX="3.75" PointY="16.70139648437501" />
+          <ConnectorPoint PointX="3.75" PointY="21.422841796874998" />
+          <ConnectorPoint PointX="5.25" PointY="21.422841796874998" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="KompShopModel.View_Товары" Width="1.5" PointX="13.375" PointY="8.75" Height="3.3263964843750102" />
+        <EntityTypeShape EntityType="KompShopModel.Категория" Width="1.5" PointX="13.375" PointY="15.125" Height="1.595683593749996" />
+        <EntityTypeShape EntityType="KompShopModel.Товар" Width="1.5" PointX="15.625" PointY="14" Height="3.9033007812500102" />
+        <AssociationConnector Association="KompShopModel.FK_Заказ_Товар_Товар" >
+          <ConnectorPoint PointX="15.625" PointY="17.343242187500003" />
+          <ConnectorPoint PointX="11.25" PointY="17.343242187500003" />
+          <ConnectorPoint PointX="11.25" PointY="13.547587890625" />
+        </AssociationConnector>
+        <AssociationConnector Association="KompShopModel.FK_Товар_Категория1" >
+          <ConnectorPoint PointX="14.875" PointY="15.922841796874998" />
+          <ConnectorPoint PointX="15.625" PointY="15.922841796874998" />
+        </AssociationConnector>
+        <AssociationConnector Association="KompShopModel.FK_Оценка_Товар" >
+          <ConnectorPoint PointX="15.625" PointY="16.977885742187496" />
+          <ConnectorPoint PointX="11.333333333333334" PointY="16.977885742187496" />
+          <ConnectorPoint PointX="11.166666666666666" PointY="16.977885742187496" />
+          <ConnectorPoint PointX="9.75" PointY="16.977885742187496" />
+        </AssociationConnector>
+        </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
