@@ -12,7 +12,12 @@
 
 <table><tr><td>Наименование</td><td>Цена</td><td>Изображение</td></tr>
     @foreach (var item in Model)
-    {    <tr><td><p>@Html.ActionLink(item.Название, "Details", new { id = item.id_товара })</p></td><td><p> @item.Цена_товара</p></td><td>@item.Изображение</td></tr>    }
-
+    {   <tr><td><p>@Html.ActionLink(item.Название, "Details", new { id = item.id_товара })</p></td>
+        <td><p> @item.Цена_товара</p></td><td>@item.Изображение</td>   
+        <td style="padding-left:30px;">@Html.ActionLink("Вверх", "Up", new { id = item.id_товара })</td>
+        <td style="padding-left:30px;">@Html.ActionLink("Вниз", "Down", new { id = item.id_товара })</td>
+    </tr>
+}
 </table>
+
 

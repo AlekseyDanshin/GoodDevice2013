@@ -261,6 +261,7 @@
           </Key>
           <Property Name="Категория" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="Подкатегория" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Короткое название" Type="nchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="Кредитная карта">
           <Key>
@@ -321,12 +322,13 @@
           <Property Name="Длина" Type="bigint" />
           <Property Name="Ширина" Type="bigint" />
           <Property Name="Высота" Type="bigint" />
-          <Property Name="Изображение" Type="image" />
+          <Property Name="Изображение" Type="nvarchar" MaxLength="150" />
           <Property Name="Уникальные характеристики" Type="varchar" />
           <Property Name="Подкатегория" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="Название" Type="varchar" Nullable="false" MaxLength="150" />
           <Property Name="Гарантия мес" Type="int" />
           <Property Name="Разрешение на возврат товара" Type="bit" />
+          <Property Name="Порядковый номер" Type="int" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
       предупреждение 6002: В таблице или представлении "KompShop.dbo.View_Доставка" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.
@@ -1177,6 +1179,7 @@
           <Property Type="String" Name="Категория1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Подкатегория" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Товар" Relationship="KompShopModel.FK_Товар_Категория1" FromRole="Категория" ToRole="Товар" />
+          <Property Type="String" Name="Короткое_название" MaxLength="20" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="Товар">
           <Key>
@@ -1188,7 +1191,7 @@
           <Property Type="Int64" Name="Длина" />
           <Property Type="Int64" Name="Ширина" />
           <Property Type="Int64" Name="Высота" />
-          <Property Type="Binary" Name="Изображение" MaxLength="Max" FixedLength="false" />
+          <Property Type="String" Name="Изображение" />
           <Property Type="String" Name="Уникальные_характеристики" MaxLength="8000" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Подкатегория" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Название" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
@@ -1197,6 +1200,7 @@
           <NavigationProperty Name="Заказ_Товар" Relationship="KompShopModel.FK_Заказ_Товар_Товар" FromRole="Товар" ToRole="Заказ_Товар" />
           <NavigationProperty Name="Категория" Relationship="KompShopModel.FK_Товар_Категория1" FromRole="Товар" ToRole="Категория" />
           <NavigationProperty Name="Оценка" Relationship="KompShopModel.FK_Оценка_Товар" FromRole="Товар" ToRole="Оценка" />
+          <Property Type="Int32" Name="Порядковый_номер" />
         </EntityType>
         <Association Name="FK_Заказ_Товар_Товар">
           <End Type="KompShopModel.Товар" Role="Товар" Multiplicity="1" />
@@ -1506,6 +1510,7 @@
           <EntitySetMapping Name="Категория">
             <EntityTypeMapping TypeName="KompShopModel.Категория">
               <MappingFragment StoreEntitySet="Категория">
+                <ScalarProperty Name="Короткое_название" ColumnName="Короткое название" />
                 <ScalarProperty Name="Подкатегория" ColumnName="Подкатегория" />
                 <ScalarProperty Name="Категория1" ColumnName="Категория" />
               </MappingFragment>
@@ -1514,6 +1519,7 @@
           <EntitySetMapping Name="Товар">
             <EntityTypeMapping TypeName="KompShopModel.Товар">
               <MappingFragment StoreEntitySet="Товар">
+                <ScalarProperty Name="Порядковый_номер" ColumnName="Порядковый номер" />
                 <ScalarProperty Name="Разрешение_на_возврат_товара" ColumnName="Разрешение на возврат товара" />
                 <ScalarProperty Name="Гарантия_мес" ColumnName="Гарантия мес" />
                 <ScalarProperty Name="Название" ColumnName="Название" />

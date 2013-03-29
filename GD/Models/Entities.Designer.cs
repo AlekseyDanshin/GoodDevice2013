@@ -4907,6 +4907,30 @@ namespace GD.Models
         private global::System.String _Подкатегория;
         partial void OnПодкатегорияChanging(global::System.String value);
         partial void OnПодкатегорияChanged();
+    
+        /// <summary>
+        /// Нет доступной документации по метаданным.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Короткое_название
+        {
+            get
+            {
+                return _Короткое_название;
+            }
+            set
+            {
+                OnКороткое_названиеChanging(value);
+                ReportPropertyChanging("Короткое_название");
+                _Короткое_название = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Короткое_название");
+                OnКороткое_названиеChanged();
+            }
+        }
+        private global::System.String _Короткое_название;
+        partial void OnКороткое_названиеChanging(global::System.String value);
+        partial void OnКороткое_названиеChanged();
 
         #endregion
     
@@ -6201,11 +6225,11 @@ namespace GD.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Byte[] Изображение
+        public global::System.String Изображение
         {
             get
             {
-                return StructuralObject.GetValidValue(_Изображение);
+                return _Изображение;
             }
             set
             {
@@ -6216,8 +6240,8 @@ namespace GD.Models
                 OnИзображениеChanged();
             }
         }
-        private global::System.Byte[] _Изображение;
-        partial void OnИзображениеChanging(global::System.Byte[] value);
+        private global::System.String _Изображение;
+        partial void OnИзображениеChanging(global::System.String value);
         partial void OnИзображениеChanged();
     
         /// <summary>
@@ -6339,6 +6363,30 @@ namespace GD.Models
         private Nullable<global::System.Boolean> _Разрешение_на_возврат_товара;
         partial void OnРазрешение_на_возврат_товараChanging(Nullable<global::System.Boolean> value);
         partial void OnРазрешение_на_возврат_товараChanged();
+    
+        /// <summary>
+        /// Нет доступной документации по метаданным.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Порядковый_номер
+        {
+            get
+            {
+                return _Порядковый_номер;
+            }
+            set
+            {
+                OnПорядковый_номерChanging(value);
+                ReportPropertyChanging("Порядковый_номер");
+                _Порядковый_номер = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Порядковый_номер");
+                OnПорядковый_номерChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Порядковый_номер;
+        partial void OnПорядковый_номерChanging(Nullable<global::System.Int32> value);
+        partial void OnПорядковый_номерChanged();
 
         #endregion
     
