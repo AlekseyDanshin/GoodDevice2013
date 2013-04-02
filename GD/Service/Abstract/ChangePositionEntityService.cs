@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,8 @@ namespace GD.Service.Abstract
         }
     }
 =======
+=======
+>>>>>>> c7e45a48a6cf0f4860bd4cf8d431898ccfac393c
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,5 +61,8 @@ namespace GD.Service.Abstract
             return (from obj in EntitySet where obj.Порядковый_номер > dataObject.Порядковый_номер orderby obj.Порядковый_номер ascending select obj).FirstOrDefault();
         }
     }
+<<<<<<< HEAD
+>>>>>>> c7e45a48a6cf0f4860bd4cf8d431898ccfac393c
+=======
 >>>>>>> c7e45a48a6cf0f4860bd4cf8d431898ccfac393c
 }

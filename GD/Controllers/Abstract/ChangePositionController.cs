@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -115,6 +116,8 @@ namespace GD.Controllers.Abstract
         #endregion
     }
 =======
+=======
+>>>>>>> c7e45a48a6cf0f4860bd4cf8d431898ccfac393c
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -230,5 +233,8 @@ namespace GD.Controllers.Abstract
 
         #endregion
     }
+<<<<<<< HEAD
+>>>>>>> c7e45a48a6cf0f4860bd4cf8d431898ccfac393c
+=======
 >>>>>>> c7e45a48a6cf0f4860bd4cf8d431898ccfac393c
 }

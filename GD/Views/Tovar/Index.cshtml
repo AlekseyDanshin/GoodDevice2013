@@ -15,7 +15,12 @@
     {   <tr><td><p>@Html.ActionLink(item.Название, "Details", new { id = item.id_товара })</p></td>
         <td><p> @item.Цена_товара</p></td><td>@item.Изображение</td>   
 <<<<<<< HEAD
+<<<<<<< HEAD
        
+=======
+        <td style="padding-left:30px;">@Html.ActionLink("Вверх", "Up", new { id = item.id_товара })</td>
+        <td style="padding-left:30px;">@Html.ActionLink("Вниз", "Down", new { id = item.id_товара })</td>
+>>>>>>> c7e45a48a6cf0f4860bd4cf8d431898ccfac393c
 =======
         <td style="padding-left:30px;">@Html.ActionLink("Вверх", "Up", new { id = item.id_товара })</td>
         <td style="padding-left:30px;">@Html.ActionLink("Вниз", "Down", new { id = item.id_товара })</td>

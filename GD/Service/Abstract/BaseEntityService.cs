@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,6 +54,8 @@ namespace GD.Service.Abstract
         }
     }
 =======
+=======
+>>>>>>> c7e45a48a6cf0f4860bd4cf8d431898ccfac393c
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -106,5 +109,8 @@ namespace GD.Service.Abstract
             EntitySet.Context.SaveChanges();
         }
     }
+<<<<<<< HEAD
+>>>>>>> c7e45a48a6cf0f4860bd4cf8d431898ccfac393c
+=======
 >>>>>>> c7e45a48a6cf0f4860bd4cf8d431898ccfac393c
 }
